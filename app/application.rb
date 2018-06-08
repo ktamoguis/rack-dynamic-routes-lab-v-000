@@ -14,7 +14,7 @@ class Application
           price = item.price
           resp.write "The price is #{price}"
           resp.status = 200
-        elsif item = @@items.last
+        elsif item == @@items.last
           resp.write "Item not found"
           resp.status = 400
         end
