@@ -9,7 +9,6 @@ class Application
 
     if req.path.match(/items/)
       lookfor_item = req.path.split("/items/").last
-
       @@items.each do |item|
         if item.name == lookfor_item
           price = item.price
@@ -18,11 +17,6 @@ class Application
           resp.write "Item not found"
           resp.status = 400
         end
-            
-      end
-        
-        resp.write "Item not found"
-        resp.status = 400
       end
     else
       resp.write "Route not found"
