@@ -12,7 +12,7 @@ class Application
       @@items.each do |item|
         if item.name == lookfor_item
           price = item.price
-          #resp.write "The price is #{price}"
+          resp.write "The price is #{price}"
           resp.status = 200
         elsif item = @@items.last
           resp.write "Item not found"
