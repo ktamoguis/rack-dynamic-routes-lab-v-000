@@ -14,8 +14,13 @@ class Application
         if item.name == lookfor_item
           price = item.price
           resp.write "The price is #{price}"
+        elsif item = @@items.last
+          resp.write "Item not found"
+          resp.status = 400
+        end
+            
       end
-
+        
         resp.write "Item not found"
         resp.status = 400
       end
